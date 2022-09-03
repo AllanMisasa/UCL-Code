@@ -38,11 +38,19 @@ import time
 
 class ESP32CONFIGA:
     def wifi_details(self):
-        SSID = 'TF'
+        SSID = 'TF27'
         KEY = 'juggernaut'
         return SSID, KEY
     def mqtt_details(self):
         channel = "/biogas/"
+
+class ESP32CONFIGB:
+    def wifi_details(self):
+        SSID = 'TF29'
+        KEY = 'JanUs'
+        return SSID, KEY
+    def mqtt_details(self):
+        channel = "/monitor/"
 
 class ESPFactory:
     def __init__(self, ESP32=None):
