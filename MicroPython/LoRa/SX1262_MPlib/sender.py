@@ -25,7 +25,7 @@ def get_modem():
                  busy=Pin(2),  # Required
                  dio1=Pin(21),   # Optional, recommended
                  dio2_rf_sw=True,
-                 dio3_tcxo_millivolts=3300,
+                 dio3_tcxo_millivolts=1600, # Else try 3300
                  reset=Pin(15),  # Optional, recommended
                  lora_cfg=lora_cfg)
 
