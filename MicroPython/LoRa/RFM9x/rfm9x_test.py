@@ -3,19 +3,19 @@ from machine import SPI, Pin
 
 #ESP32 Example
 
-CS = Pin(33, Pin.OUT)
-RESET = Pin(27, Pin.OUT)
-spi = SPI(2, baudrate=1000000, polarity=0, phase=0, bits=8, firstbit=0, sck=Pin(5), mosi=Pin(18), miso=Pin(19))
-#CS = Pin(5, Pin.OUT)
-#RESET = Pin(22, Pin.OUT)
-#spi = SPI(2, baudrate=1000000, polarity=0, phase=0, bits=8, firstbit=0, sck=Pin(18), mosi=Pin(23), miso=Pin(19))
+#CS = Pin(33, Pin.OUT)
+#RESET = Pin(27, Pin.OUT)
+#spi = SPI(2, baudrate=1000000, polarity=0, phase=0, bits=8, firstbit=0, sck=Pin(5), mosi=Pin(18), miso=Pin(19))
+CS = Pin(5, Pin.OUT)
+RESET = Pin(22, Pin.OUT)
+spi = SPI(2, baudrate=1000000, polarity=0, phase=0, bits=8, firstbit=0, sck=Pin(18), mosi=Pin(23), miso=Pin(19))
 
 RADIO_FREQ_MHZ = 868.0 # 868.0 MHz for Europe, 915.0 MHz for Americas, 433.0 for Asia, 915.0 for Australia
 rfm9x = RFM9x(spi, CS, RESET, RADIO_FREQ_MHZ)
 
 # You can however adjust the transmit power (in dB).  The default is 13 dB but
 # high power radios like the RFM95 can go up to 23 dB:
-rfm9x.tx_power = 23
+rfm9x.tx_power = 16
 
 # Send a packet.  Note you can only send a packet up to 252 bytes in length.
 # This is a limitation of the radio packet size, so if you need to send larger
