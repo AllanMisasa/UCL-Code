@@ -12,6 +12,9 @@ python -m pip install -e detectron2
 Installing the full PyTorch setup from source will also install Detectron2 for you:
 cd deepdoctection
 pip install ".[source-pt]"
+
+Tesseract is also required:
+https://tesseract-ocr.github.io/tessdoc/Installation.html
 '''
 
 import deepdoctection as dd
